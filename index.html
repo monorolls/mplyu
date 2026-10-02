@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Monopoly Go</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dev20l/-ajax-libs-jquery-3.7.1-jquery@main/ogg.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="nav-top" id="prizeSlots"></div>
+
+    <div class="main-game-area">
+        <div class="wheel-box">
+            <img src="https://i.imgur.com/MThCg6p.png" id="wheelPointer" class="red-pointer" alt="">
+            <img src="https://i.imgur.com/kmQVmuv.png" class="center-logo" alt="">
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+        </div>
+    </div>
+
+    <div class="spin-button-container">
+        <img src="https://i.imgur.com/dtXWlO9.png" id="spinBtn" alt="Spin">
+        <br>
+        <div class="main-count"><span id="spin-item">0</span>/2</div>
+    </div>
+
+    <!-- Prize Popup -->
+    <div class="bg-overlay" id="overlay">
+        <div class="collect-main animate-bounceIn">
+            <img class="img-header" src="https://i.imgur.com/YdAwZs5.png" alt="">
+            <div class="collect-content">
+                <h4>HERE'S A GIFT FOR YOU!</h4>
+                <div class="bg-collect" id="popupResults"></div>
+            </div>
+            <div class="footer-container">
+                <button class="spin-buttons" id="collectBtn">COLLECT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Locker -->
+    <div class="locker-overlay" id="lockerOverlay">
+        <div class="locker-box">
+            <div id="lockerMain">
+                <div class="locker-lock">🔒</div>
+                <h3>Complete 1 offer below to unlock your PRIZE.</h3>
+                <div class="locker-prizes" id="lockerPrizes"></div>
+                <div id="offersList"><div class="locker-loading">Loading offers...</div></div>
+                <div class="locker-status" id="lockerStatus"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.GAME_CONFIG = {
+            SECTORS_DATA: [
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/5000dice.webp", color: "#e31b23" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/Syrup_Token_02_Icon.webp", color: "#f1ad11" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/StickerPack_Choice_Icon.webp", color: "#109c33" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/StickerPack_4Star4StickersPack_Icon.webp", color: "#e31b23" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/500dice.webp", color: "#4176d7" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/Guava_Token_01_Icon.webp", color: "#109c33" },
+                { img: "https://cdn.jsdelivr.net/gh/monorolls/mplyy@main/StickerPack_5Star6StickersPack_Icon.webp", color: "#f1ad11" }
+            ],
+            clickSound: new Audio(''),
+            spinSound: new Audio('https://cdn.pixabay.com/audio/2024/08/15/audio_e17db8c011.mp3'),
+            winSound: new Audio('https://cdn.pixabay.com/audio/2024/10/07/audio_3747f564b1.mp3')
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/dev20l/-ajax-libs-jquery-3.7.1-jquery@main/ogg.js"></script>
+</body>
+</html>
